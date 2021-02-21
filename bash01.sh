@@ -1,10 +1,10 @@
 #!/bin/bash
 
-find /etc* -type f -exec md5sum {} \; >/var/log/file_integrity/test.log 
+find /etc* -type f -exec md5sum {} \; >~/file_integrity.log 
 
-_now=$(date '+%d/%m/%Y %H:%M:%S')
- 
-_file=" /var/log/file_integrity/test_$now.log"
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 
-echo "$_file"
+echo "file_integrity_$timestamp.log"
+
+
 
